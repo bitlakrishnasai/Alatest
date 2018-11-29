@@ -1,0 +1,43 @@
+public class Problem3 {
+    public static void main(String[] args) {
+int A[] =  new int[12];
+A[0]=5;
+A[1]=4;
+A[2]=-3;
+A[3]=2;
+A[4]=0;
+A[5]=1;
+A[6]=-1;
+A[7]=0;
+A[8]=2;
+A[9]=-3;
+A[10]=4;
+A[11]=5;
+Solution slice=new Solution();
+        System.out.println(slice.solution(A));
+    }
+}
+
+class Solution {
+    public int solution(int[] A){
+int largestAlternatingSlice=0;
+int slice=1;
+    for (int i = 0; i < A.length - 1; i++) {
+        if (A[i] * A[i + 1] <= 0) {
+            slice++;
+            if (slice > largestAlternatingSlice) {
+                largestAlternatingSlice = slice;
+            }
+        } else {
+            slice = 1;
+
+        }
+
+    }
+
+
+
+        return largestAlternatingSlice;
+    }
+}
+
