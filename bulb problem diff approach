@@ -1,0 +1,38 @@
+package codility;
+
+public class try2 {
+    public static void main(String[] args) {
+        int[] A = new int[100];
+        A[0]=2;
+        A[1]=1;
+        A[2]=3;
+        A[3]=5;
+        A[4]=4;
+
+        try3 li = new try3();
+
+        System.out.println(li.lightCounter(A));
+    }
+}
+
+class try3{
+    public int lightCounter(int A[]){
+        int lightsOn=0;
+
+
+        for(int i=0;i<A.length;i++) {
+            if(A[i]==0){break;}
+//                                                                  System.out.println(i);
+
+            boolean flag=true;
+            for(int j=i+1;j<A.length;j++) {
+                if(A[j]==0){break;}
+//                                                                  System.out.println(j+"s");
+                if(A[i]<=A[j]){}else{flag=false;break;}
+
+            }if(flag){lightsOn++;}
+
+        }
+
+    return lightsOn;}
+}
