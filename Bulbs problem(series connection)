@@ -1,0 +1,41 @@
+public class Bulb {
+    public static void main(String[] args) {
+        int[] A = new int[100];
+        A[0]=2;
+        A[1]=1;
+        A[2]=3;
+        A[3]=5;
+        A[4]=4;
+        BulbOnMonents lit = new BulbOnMonents();
+        System.out.println(lit.lightCounter(A));
+    }
+}
+
+class BulbOnMonents
+{
+    public int lightCounter(int A[])
+    {
+        int lightsOn=0;
+        ArrayList<Integer> list= new ArrayList<>();
+
+        for(int i=0;i<A.length;i++)
+        {if(A[i]==0)break;
+            list.add(A[i]);
+//                                                                        System.out.println(list.get(i));
+
+boolean flag=true;
+            for(int j=1;j<=i+1;j++)
+            {
+                if(list.contains(j)){}
+                else
+                    {flag=false;
+                    break;
+                    }
+//                                                                         System.out.println(j);
+            }if(flag){lightsOn++;}
+//            System.out.println("lit"+lightsOn);
+        }
+//                                                                           System.out.println(list);
+    return lightsOn;
+    }
+}
