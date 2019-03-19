@@ -82,5 +82,4 @@ public class testMain {
         Assert.assertEquals(5.8f, price,0.0f);
         Assert.assertEquals("Both", operatorName);
     }
-
 }
